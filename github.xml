@@ -5,6 +5,6 @@
     </account>
   </component>
   <component name="GithubSettings">
-    <option name="PRIVATE_GIST" value="false" />
+    <option name="COPY_URL_GIST" value="true" />
   </component>
 </application>
