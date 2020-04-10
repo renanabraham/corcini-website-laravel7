@@ -1,0 +1,110 @@
+.logo_fix {
+    z-index: 1;
+    position: fixed;
+    left: 75px;
+    top: 40vh;
+}
+
+.logo_fix_up {
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    left: 49px;
+}
+
+.logo_fix_up img {
+    width: 30%;
+}
+
+.logo_fix img {
+    width: 70%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    right: 49px;
+}
+
+.menu img {
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.menu img:hover {
+    filter: brightness(80%);
+}
+
+.menu span {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+
+.nav {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: #5c4e63;
+    opacity: 95%;
+}
+
+.nav ul {
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.nav li {
+    flex-basis: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    border-top: 2px solid var(--colorSand);
+}
+.nav li:last-child{
+    border-bottom: 2px solid var(--colorSand);;
+}
+
+.nav a {
+    color: var(--colorWhite);
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 10px;
+    transition: filter 0.2s;
+}
+
+.nav a:hover {
+    filter: brightness(80%);
+}
+
+.close_menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    z-index: 4;
+    width: 50px;
+    height: 50px;
+    background: var(--colorSand);
+    color: var(--colorWine);
+    font-size: 2em;
+    border-radius: 50%;
+    transition: filter 0.2s;
+}
+
+.close_menu:hover {
+    filter: brightness(80%);
+}
