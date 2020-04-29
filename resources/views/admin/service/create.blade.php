@@ -19,24 +19,24 @@
             @csrf
 
             <div class="form-group">
-                <label for=""><b>*</b>Categoria:</label>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Selecione uma categoria:</label>
+                <label for=""><b>1.</b> <b>*</b>Categoria:</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Selecione uma categoria:</label>
+                    </div>
+                    <select class="custom-select" name="category_id">
+                        <option value="">Selecionar...</option>
+                        @foreach($categories as $category)
+                            <option
+                                    value="{{$category->id}}" {{(old('category_id') == $category->id ? 'selected' : '')}}>{{$category->title}}
+                                - {{$category->id}}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <select class="custom-select" name="category_id">
-                    <option value="">Selecionar...</option>
-                    @foreach($categories as $category)
-                        <option
-                            value="{{$category->id}}" {{(old('category_id') == $category->id ? 'selected' : '')}}>{{$category->title}}
-                            - {{$category->id}}</option>
-                    @endforeach
-                </select>
-            </div>
             </div>
 
             <div class="form-group">
-                <label for=""><b>*</b>Título:</label>
+                <label for=""><b>2.</b> <b>*</b>Título:</label>
                 <input class="form-control" type="text" name="title" value="{{old('title')}}">
             </div>
 
@@ -47,40 +47,51 @@
 
             <div class="form-group">
                 <label>"Head Line" do serviço:</label>
-                <textarea class="form-control" name="headline" rows="5">{{old('headline')}}</textarea>
+                <textarea class="form-control" name="headline" rows="3">{{old('headline')}}</textarea>
             </div>
 
             <div class="form-group">
-                <label>Parágrafo 1</label>
-                <textarea class="form-control" name="p1" rows="20">{{old('p1')}}</textarea>
-                <small class="text-muted">
-                    Must be 8-20 characters long.
-                </small>
+                <label><b>1.</b> Parágrafo 1</label>
+                <textarea class="form-control" name="p1" rows="10">{{old('p1')}}</textarea>
+                <p class="text-muted">
+                    Você pode colocar o texto dentro de: <code>&lt;p&gt; SEU TEXTO &lt;/p&gt;</code> para indicar um
+                    paragrafo completo.
+                </p>
             </div>
 
-            <div class="form-group">
-                <label>Imagem com posição justificada na esquerda</label>
-                <input class="form-control" type="file" name="image1" value="">
-            </div>
+            <div class="bg-light p-4">
+                <h3>IMAGEM 1</h3>
+                <p class=" text-danger">
+                   <b>Atenção: </b>Tamanho de 571 x 371 px para nao estragar o layout do site!
+                </p>
+                <div class="form-group">
+                    <label>Imagem com posição justificada na esquerda</label>
+                    <input class="form-control" type="file" name="image1" value="">
+                </div>
 
-            <div class="form-group">
-                <label>Descrição da imagem justificada na esquerda</label>
-                <input class="form-control" type="text" name="image1desc" value="{{old('image1desc')}}">
+                <div class="form-group">
+                    <label>Descrição da imagem justificada na esquerda</label>
+                    <input class="form-control" type="text" name="image1desc" value="{{old('image1desc')}}">
+                </div>
             </div>
 
             <div class="form-group">
                 <label>Parágrafo 2</label>
-                <textarea class="form-control" name="p2" rows="20">{{old('p2')}}</textarea>
+                <textarea class="form-control" name="p2" rows="10">{{old('p2')}}</textarea>
             </div>
 
             <div class="form-group">
                 <label>Imagem com posição justificada na direita</label>
-                <input type="file" name="image2">
+                <input class="form-control" type="file" name="image2">
+                <small class=" text-danger">
+                    Deve ter um tamanho de 571x371px
+                </small>
             </div>
 
             <div class="form-group">
                 <label>Descrição da imagem justificada na direita</label>
                 <input class="form-control" type="text" name="image2desc" value="{{old('image2desc')}}">
+
             </div>
 
             <div class="form-group">
@@ -90,7 +101,7 @@
 
             <div class="form-group">
                 <label for="">Parágrafo 4</label>
-                <input class="form-control" type="text" name="p4" placeholder="p4" value="{{old('p4')}}">
+                <textarea class="form-control" type="text" name="p4" rows="10">{{old('p4')}}</textarea>
             </div>
 
             <div class="form-group">

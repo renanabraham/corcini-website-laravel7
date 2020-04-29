@@ -26,6 +26,7 @@
 <!--Template functions-->
 <script src="{{asset('assets/js/functions.js')}}"></script>
 <script src="{{asset('assets/js/scripts.js')}}"></script>
+<script src="{{asset('assets/plugins/navslides.js')}}"></script>
 
 </body>
 </html>

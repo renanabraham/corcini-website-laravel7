@@ -201,6 +201,11 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::find($id);
+        if ($service) {
+            $service->delete();
+        }
+
+        return redirect('/admin');
     }
 }

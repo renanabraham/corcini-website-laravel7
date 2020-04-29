@@ -6,7 +6,8 @@
         <div class="vertical">
             <img class="social" src="{{asset('images/desktop/icon_instagram.png')}}" alt="">
             <img class="social" src="{{asset('images/desktop/icon_facebook.png')}}" alt="">
-            <img src="{{asset('images/desktop/line_white.png')}}" alt="">
+            <img class="line_yellow" src="{{asset('images/desktop/line_white.png')}}" alt="">
+            <img class="line_wine ds-none" src="{{asset('images/desktop/line.png')}}" alt="">
             <p style="color: var(--colorWhite);">Siga a Clínica Corcini</p>
         </div>
     </div>

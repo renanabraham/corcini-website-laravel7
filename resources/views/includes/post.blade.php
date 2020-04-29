@@ -101,65 +101,65 @@
                             </div>
                         @endif
 
-                        @if($ser->step1_title)
+                        @if($service->step1_title)
                             <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step1_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step1_content}}</p>
+                                <h1 class="j-click-btn">{{$service->step1_title}}</h1>
+                                <div class="j-click-btn-content ds-none">
+                                    <p>{{$service->step1_content}}</p>
                                 </div>
                             </div>
                         @endif
 
-                        @if($ser->step2_title)
-                            <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step2_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step2_content}}</p>
+                        @if($service->step2_title)
+                            <div class="box_generic">
+                                <h1 class="j-click-btn1">{{$service->step2_title}}</h1>
+                                <div class="j-click-btn-content1 ds-none">
+                                    <p>{{$service->step2_content}}</p>
                                 </div>
                             </div>
                         @endif
 
-                        @if($ser->step3_title)
-                            <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step3_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step3_content}}</p>
+                        @if($service->step3_title)
+                            <div class="box_generic">
+                                <h1 class="j-click-btn2">{{$service->step3_title}}</h1>
+                                <div class="j-click-btn-content2 ds-none">
+                                    <p>{{$service->step3_content}}</p>
                                 </div>
                             </div>
                         @endif
 
-                        @if($ser->step4_title)
-                            <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step4_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step4_content}}</p>
+                        @if($service->step4_title)
+                            <div class="box_generic">
+                                <h1 class="j-click-btn3">{{$service->step4_title}}</h1>
+                                <div class="j-click-btn-content3 ds-none">
+                                    <p>{{$service->step4_content}}</p>
                                 </div>
                             </div>
                         @endif
 
-                        @if($ser->step5_title)
-                            <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step5_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step5_content}}</p>
+                        @if($service->step5_title)
+                            <div class="box_generic">
+                                <h1 class="j-click-btn4">{{$service->step5_title}}</h1>
+                                <div class="j-click-btn-content4 ds-none">
+                                    <p>{{$service->step5_content}}</p>
                                 </div>
                             </div>
                         @endif
 
-                        @if($ser->step6_title)
-                            <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step6_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step6_content}}</p>
+                        @if($service->step6_title)
+                            <div class="box_generic">
+                                <h1 class="j-click-btn5">{{$service->step6_title}}</h1>
+                                <div class="j-click-btn-content5 ds-none">
+                                    <p>{{$service->step6_content}}</p>
                                 </div>
                             </div>
                         @endif
 
-                        @if($ser->step7_title)
-                            <div class="box_generic marginTop60px">
-                                <h1 class="j-click-btn">{{$ser->step7_title}}</h1>
-                                <div class="j-click-btn-content">
-                                    <p>{{$ser->step7_content}}</p>
+                        @if($service->step7_title)
+                            <div class="box_generic">
+                                <h1 class="j-click-btn6">{{$service->step7_title}}</h1>
+                                <div class="j-click-btn-content6 ds-none">
+                                    <p>{{$service->step7_content}}</p>
                                 </div>
                             </div>
                         @endif

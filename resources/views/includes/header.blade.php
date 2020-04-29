@@ -13,7 +13,7 @@
     </div>
 
     <div class="menu">
-        <span class="go_out_in_1170">Menu</span>
+        <span class="go_out_in_1170 j-chance-color">Menu</span>
         @if(isset($menuColor))
             @if($menuColor === "sand")
                 <img src="{{asset('images/desktop/menu.png')}}" alt="">

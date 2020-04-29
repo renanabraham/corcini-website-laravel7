@@ -26,7 +26,7 @@
                 <th scope="row">{{$service->id}}</th>
                 <td>{{$service->title}}</td>
                 <td><a href="admin/service/edit/{{$service->id}}">Editar</a></td>
-                <td><a class="text-danger" href="admin/service/destroy/{{$service->id}}" onclick="return confirm('Tem certeza?')">Excluir</a></td>
+                <td><a class="text-danger" href="admin/service/delete/{{$service->id}}" onclick="return confirm('Tem certeza?')">Excluir</a></td>
             </tr>
         @endforeach
         </tbody>

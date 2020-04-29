@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -47,12 +48,11 @@ class CategoryController extends Controller
     {
         if (Auth::check() === true) {
             $rules = [
-                'title' => 'filled',
+                'title' => 'required',
                 'subtitle' => 'required'
             ];
 
             $request->validate($rules);
-
             $categorySlug = $this->setSlug($request->title);
             $category = new Category();
             $category->parent = $request->parent;
@@ -60,6 +60,7 @@ class CategoryController extends Controller
             $category->title = $request->title;
             $category->subtitle = $request->subtitle;
             $category->order = $request->order;
+            //var_dump( $category->id);
             $category->save();
 
             return redirect('/admin');
@@ -97,12 +98,16 @@ class CategoryController extends Controller
     public function edit($id)
     {
         if (Auth::check() === true) {
-            $subCats = Category::where('parent', null)->get();
+            $subCats = Category::where('parent', null)->where('id', '!=', $id)->get();
             $category = Category::where('id', $id)->first();
+
+            $verify = Category::where('parent', $id)->get();
+
             if (isset($category)) {
                 return view('admin.category.edit', [
                     'subCats' => $subCats,
                     'category' => $category,
+                    'verify' => $verify
                 ]);
             }
         }
@@ -121,12 +126,14 @@ class CategoryController extends Controller
     {
         if (Auth::check() === true) {
             $rules = [
-                'title' => 'filled',
+                'title' => 'required',
                 'subtitle' => 'required'
             ];
 
             $request->validate($rules);
+
             $category = Category::find($id);
+
             $categorySlug = $this->setSlug($request->title);
 
             $category->parent = $request->parent;
@@ -150,13 +157,16 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        if (Auth::check()===true) {
+        if (Auth::check() === true) {
             $category = Category::find($id);
 
-            if ($category) {
-                $category->delete();
-                return redirect('/admin');
+            $verifyServices = Service::where('category_id', $id)->get();
+            $verifySubCats = Category::where('parent', $id)->get();
+            if ($verifyServices->count() >= 1 || $verifySubCats->count() >= 1) {
+                return view('admin.errors', ['erro' => 'Você <b>NÃO</b> pode deletar uma categoria que possui serviços registrados ou outras categorias registrada. Essa ação pode comprometer todo o funcionamento do site! ta ok?',
+                    'route' => '/admin']);
             } else {
+                $category->delete();
                 return redirect('/admin');
             }
         }

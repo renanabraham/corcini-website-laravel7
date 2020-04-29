@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         @foreach($errors->all() as $message)
@@ -26,7 +25,7 @@
                 </div>
 
                 <select class="custom-select" name="parent">
-                    <option value=""><b>#PRINCIPAL</b></option>
+                    <option value="">#PRINCIPAL</option>
                     @foreach($categories as $cat)
                         <option value="{{$cat->id}}" {{(old('parent') == $cat->id ? 'selected' : '')}}>{{$cat->title}}
                             - {{$cat->id}}</option>

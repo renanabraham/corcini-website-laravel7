@@ -37,6 +37,7 @@ $(function () {
 
     //################## LOGO FADEIN & FADEOUT
     var home = $('.home').length;
+    var services = $('.services').length;
     var about = $('.about').length;
     if (home) {
         console.log('tem a classe');
@@ -46,15 +47,48 @@ $(function () {
                 $('.logo_fix').fadeOut(800, function () {
                     $('.j_logo_dark').fadeIn(5000);
                 });
+
+
             }
             if ($(this).scrollTop() < $('.j_logo_position').outerHeight() * 2) {
                 $('.logo_fix').fadeIn(1000, function () {
-                    $('.j_logo_dark').fadeOut(1);
                 });
             }
+
+            //linha do social da home
+            if ($(this).scrollTop() > $('.j_logo_position').outerHeight() * 3.1) {
+                $('.line_yellow').fadeOut(function () {
+                    $('.line_wine').fadeIn();
+                });
+            }
+
+            if ($(this).scrollTop() < $('.j_logo_position').outerHeight() * 3.1) {
+                $('.line_wine').fadeOut(function () {
+                    $('.line_yellow').fadeIn();
+                });
+            }
+
+            //LOGO MOBILE
+            if ($(this).scrollTop() > $('.logo_for_mobile').outerHeight() * 1) {
+                $('.logo_for_mobile ').fadeOut();
+            }
+            // if ($(this).scrollTop() < $('.logo_for_mobile').outerHeight() * 1) {
+            //     $('.logo_for_mobile ').fadeIn();
+            // }
         });
     } else {
         console.log('no class');
+    }
+    if (services) {
+        $(window).scroll(function () {
+            //troca cor do menu
+            if ($(this).scrollTop() > $('.posts_header').outerHeight() * 1) {
+                $('.j-chance-color').css('color', 'd3bc8d');
+            }
+            if ($(this).scrollTop() < $('.posts_header').outerHeight() * 1) {
+                $('.j-chance-color').css('color', 'white');
+            }
+        });
     }
     if (about) {
         console.log('tem a classe');

@@ -76,7 +76,7 @@ class CategoriesTableSeeder extends Seeder
             'parent' => 3,
             'title' => $title8,
             'slug' => Str::slug($title8),
-            'subtitle' => ''
+            'subtitle' => '',
         ]);
     }
 }
