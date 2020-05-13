@@ -16,7 +16,7 @@
 
 (function($) {
 
-    var types = ['DOMMouseScroll', 'keyboard'];
+    var types = ['DOMMouseScroll','keyboard'];
 
     if ($.event.fixHooks) {
         for ( var i=types.length; i; ) {

@@ -7,7 +7,7 @@
         <div class="page"><!--pluging de scroll com teclado-->
             <div id="slide{{$boss->id}}"
                  class="slides_container j-slide {{($boss->order == 1 ? 'j_logo_position' : '')}}"
-                 style="background: url('images/desktop/slide_{{$boss->id}}.jpg') center center no-repeat;">
+                 style="background: url('images/desktop/slide_{{$boss->id}}.png') center center no-repeat;">
                 <div class="content"><!--1170-->
                     <div class="content800"><!--800px-->
                         <article class="slide_item">

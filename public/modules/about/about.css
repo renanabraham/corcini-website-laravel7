@@ -24,7 +24,7 @@
 }
 
 .about_pics img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .about_content {
@@ -32,9 +32,11 @@
     align-items: center;
     background: url("../../images/desktop/about/wave.png") left center no-repeat;
     background-size: 500px;
-    height: 777px;
+    justify-content: center;
+    margin: 60px 0;
 }
-.about_content .content{
+
+.about_content .content {
     justify-content: flex-end;
 }
 
@@ -85,24 +87,34 @@
     font-weight: 400;
 }
 
+
 .left_div {
     width: 60%;
-    background: var(--colorLightSand);
+    background: #fef9ee;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.dra_img {
+    width: 100%;
 }
 
 .left_div_content {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background: red;
+/ / background: red;
     width: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 50px;
-    text-align: right;
+    padding-top: 80px;
+    padding-bottom: 80px;
+/ / padding-right: 50 px;
+    margin-left: 35px;
+    text-align: left;
     color: var(--colorWine);
     font-size: 14px;
     text-transform: uppercase;
@@ -115,26 +127,47 @@
     width: 100%;
     border-bottom: 2px solid var(--colorSand);
     text-align: center;
+    margin-bottom: 30px;
 }
-.left_div_footer{
+
+.left_div_footer {
     display: flex;
     align-items: flex-start;
     text-align: left;
     margin-top: 90px;
 }
-.left_div_footer p{
+
+.left_div_footer p {
     text-transform: uppercase;
     color: var(--colorWine);
     font-weight: var(--fontWeightSemiBold);
     size: 20px;
 }
-.right_div{
+
+.about_social_links {
     display: flex;
-    justify-content: flex-end;
-    height: 450px;
-    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    background: #fef9ee;
 }
-.right_div_content{
-    width: 50%;
-    background: #d3bc8d;
+
+.about_social_links h1 {
+    flex-basis: 100%;
+    text-align: center;
+    color: var(--colorSand);
+    font-weight: var(--fontWeightSemiBold);
+    font-size: 20px;
+    text-transform: uppercase;
 }
+
+.about_social_links ul {
+    display: flex;
+}
+
+.about_social_links img {
+    border: 1px solid #e3dfd5;
+    padding: 10px;
+}
+

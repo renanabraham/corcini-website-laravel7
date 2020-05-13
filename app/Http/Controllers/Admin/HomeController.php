@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Profile;
 use App\Service;
 use Illuminate\Http\Request;
 use App\Addr;
@@ -33,12 +34,16 @@ class HomeController extends Controller
             //Listagem de serviços
             $servicesAll = Service::all();
 
+            //PROFILE
+            $profile = Profile::where('id', 1)->first();
+
             //Retorno de view
             return view('admin.home', [
                 'addrs' => $addrs,
                 'categories' => $categories,
                 'subCategories' => $subCategories,
-                'servicesAll' => $servicesAll
+                'servicesAll' => $servicesAll,
+                'profile' => $profile
             ]);
         }
         return view('auth.login');

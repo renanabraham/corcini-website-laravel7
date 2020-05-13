@@ -19,8 +19,8 @@ class CreateProfilesTable extends Migration
             $table->string('subtitle');
             $table->longText('headline');
             $table->longText('p1');
-            $table->longText('p2');
-            $table->longText('p3');
+            $table->longText('p2')->nullable();
+            $table->longText('p3')->nullable();
             $table->longText('p4');
         });
     }

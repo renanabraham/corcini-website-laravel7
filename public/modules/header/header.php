@@ -18,7 +18,6 @@
 </head>
 <body>
 <header>
-
     <div class="logo_for_mobile ds-none">
         <img src="images/desktop/logo.png" alt="">
     </div>

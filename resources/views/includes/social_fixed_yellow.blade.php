@@ -2,11 +2,12 @@
     <header class="ds-none">
         <h1>Siga a Clínica Corcini nas Redes Sociais</h1>
     </header>
-    <div class="social_media_fix" style="padding: 5px; background: #ffffff;">
+    <div class="social_media_fix" style="padding: 5px; background: transparent;">
         <div class="vertical">
-            <img class="social" src="{{asset('images/desktop/icon_instagram_yellow.png')}}" alt="">
-            <img class="social" src="{{asset('images/desktop/icon_facebook_yellow.png')}}" alt="">
-            <img src="{{asset('images/desktop/line.png')}}" alt="">
+            <a href="https://www.instagram.com/draanacorcini/?hl=pt-br" target="_blank" title="Siga a Clínica Corcini no Instagram"><img class="social" src="{{asset('images/desktop/icon_instagram_yellow.png')}}" alt=""></a>
+            <a href="https://www.facebook.com/draanaceciliacorcini/" target="_blank" title="Siga a Clínica Corcini no Facebook"><img class="social" src="{{asset('images/desktop/icon_facebook_yellow.png')}}" alt=""></a>
+            <img class="line_yellow ds-none" src="{{asset('images/desktop/line_white.png')}}" alt="">
+            <img class="line_wine" src="{{asset('images/desktop/line.png')}}" alt="">
             <p style="color: var(--colorSand);">Siga a Clínica Corcini</p>
         </div>
     </div>

@@ -10,6 +10,7 @@
         <form action="/admin/category/update/{{$category->id}}" method="post" autocomplete="off"
               enctype="multipart/form-data">
             @csrf
+            <input type="text" name="order" value="{{$category->order}}" hidden>
             <div class="form-group">
                 <label for="">Título da Categoria:</label>
                 <input class="form-control" type="text" name="title" value="{{$category->title}}">

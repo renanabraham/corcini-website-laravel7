@@ -4,7 +4,9 @@
             <h2><b>1.</b> Gestão das <b>Categorias</b> do Site</h2>
         </div>
         <div class="col">
-            <a class="btn btn-primary float-right" href="/admin/category/create">Adicionar nova categoria</a>
+            <a class="btn btn-primary float-right" href="/admin/category/create"
+               onclick="return confirm('TOME CUIDADO: Se você adicionar uma nova categoria PRINCIPAL o sistema entra em colapso. Você tem essa autônomia, mas lembre-se que o sistema não suporta adicionar nova imagem de fundo nem ordem correta. Adicione somente novas sub categorias relacionadas as três principais já colocadas. ')">Adicionar
+                nova categoria</a>
         </div>
     </div>
     <div class="row">
@@ -28,7 +30,8 @@
                     <td><b>{{$category->title}}</b></td>
                     <td>{{$category->subtitle}}</td>
                     <td><a href="/admin/category/edit/{{$category->id}}">Editar</a></td>
-                    <td><a class="text-danger" href="/admin/category/delete/{{$category->id}}" onclick="return confirm('Tem certeza?')">Excluir</a>
+                    <td><a class="text-danger" href="/admin/category/delete/{{$category->id}}"
+                           onclick="return confirm('Tem certeza?')">Excluir</a>
                     </td>
                 </tr>
                 @foreach($subCategories as $sub)

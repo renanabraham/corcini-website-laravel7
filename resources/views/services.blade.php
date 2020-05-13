@@ -3,7 +3,7 @@
     $menuColor = "wine";
     $title = "servicos";
 @endphp
-@section('title', '')
+@section('title', 'Serviços')
 
 @section('content')
     @include('includes.header')
@@ -11,7 +11,8 @@
     @include('includes.social_fixed_yellow')
 
     @include('includes.post')
-
+    <div class="services-post-go-out-1178">
     @include('includes.contact')
     @include('includes.services')
+    </div>
 @endsection

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'SiteController@home');
 Route::get('/servicos/{slug}/{id}', 'SiteController@services');
 Route::get('/servico/{slug}', 'SiteController@service');
-Route::get('/sobre/', 'SiteController@profile');
+Route::get('/sobre', 'SiteController@profile');
 //Route::get('/servicos/{slug}/', 'SiteController@nav');
 //Route::get('/servico/{slug}', 'SiteController@service');
 //Route::get('/testes', 'SiteController@testes');
@@ -45,11 +45,12 @@ Route::prefix('admin')->group(function () {
     Route::post('/addr/update/{id}', 'Admin\AddrController@update');
     Route::get('/addr/delete/{id}', 'Admin\AddrController@destroy');
     //PROFILE
-    Route::get('/profile/edit/{id}', 'Admin\AboutController@edit');
+    Route::get('/profile/edit/{id}', 'Admin\ProfileController@edit');
+    Route::post('/profile/update/{id}', 'Admin\ProfileController@update');
     //################################################################################################################
 });
 
 
-Auth::routes();
+Auth::routes(['register'=>false]);
 
 Route::get('/home', 'HomeController@index')->name('home');

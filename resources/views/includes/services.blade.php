@@ -2,8 +2,9 @@
     <div class="logo_on_mobile_services ds-none">
         <img src="{{asset('images/desktop/logo_dark.png')}}" alt="">
     </div>
-    <div class="logo_dark position-absolute">
-        <img class="j_logo_dark ds-none" src="{{asset('images/desktop/logo_dark.png')}}" alt="">
+    <!--retirado pela ale-->
+    <div class="logo_dark position-absolute ds-none">
+        <img class="j_logo_dark" src="{{asset('images/desktop/logo_dark.png')}}" alt="">
     </div>
     <div class="content"><!--1170px-->
 
@@ -31,7 +32,8 @@
                             <ul>
                                 @foreach($subCategories as $sub)
                                     @if($sub->parent == $category->id)
-                                        <li><a href="servicos/{{$sub->slug}}/{{$sub->id}}">{{$sub->title}}</a></li>
+                                        <li><a href="{{url('servicos/'.$sub->slug.'/'.$sub->id)}}">{{$sub->title}}</a>
+                                        </li>
                                     @endif
                                 @endforeach
                             </ul>

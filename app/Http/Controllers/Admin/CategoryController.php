@@ -60,7 +60,6 @@ class CategoryController extends Controller
             $category->title = $request->title;
             $category->subtitle = $request->subtitle;
             $category->order = $request->order;
-            //var_dump( $category->id);
             $category->save();
 
             return redirect('/admin');

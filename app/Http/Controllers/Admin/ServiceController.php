@@ -154,18 +154,21 @@ class ServiceController extends Controller
             $service->subtitle = $request->subtitle;
             $service->headline = $request->headline;
             $service->p1 = $request->p1;
+
             if ($request->file('image1')) {
                 $service->image1 = $request->file('image1')->store('public/service');
             } else {
-                $service->image1 = null;
+                $service->image1 = $service->image1;
             }
             $service->image1desc = $request->image1desc;
             $service->p2 = $request->p2;
+
             if ($request->file('image2')) {
                 $service->image2 = $request->file('image2')->store('public/service');
             } else {
-                $service->image2 = null;
+                $service->image2 = $service->image2;
             }
+
             $service->image2desc = $request->image2desc;
             $service->p3 = $request->p3;
             $service->p4 = $request->p4;

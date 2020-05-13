@@ -37,5 +37,6 @@
         @include('admin.category.list')
         @include('admin.service.list')
         @include('admin.addr.list')
+        @include('admin.profile.list')
     </div>
 @endsection

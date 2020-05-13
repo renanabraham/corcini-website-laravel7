@@ -1,10 +1,12 @@
 <section id="slide4" class="services_container position-relative">
+
         <div class="logo_on_mobile_services ds-none">
             <img src="images/desktop/logo_dark.png" alt="">
         </div>
         <div class="logo_dark position-absolute">
             <img class="j_logo_dark ds-none" src="images/desktop/logo_dark.png" alt="">
         </div>
+
     <div class="content"><!--1170px-->
 
         <div class="content800"><!--800px-->

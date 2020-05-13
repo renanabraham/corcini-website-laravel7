@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Addr;
+use App\Profile;
 use App\Service;
+use CoffeeCode\Optimizer\Optimizer;
 use Illuminate\Http\Request;
 use App\Category;
 
@@ -11,6 +13,15 @@ class SiteController extends Controller
 {
     public function home()
     {
+        //CLASSE SEO
+        $op = new Optimizer();
+        $seo = $op->openGraph(env('APP_NAME'), 'pt_BR', 'article')
+            ->optimize('Clínica Corcini - Home',
+                '',
+                url('/'),
+                asset(''))
+            ->render();
+
         //LISTAGEM DE CATEGORIAS
         $categories = Category::all();
         $bossCategory = Category::where('parent', null)->orderBy('order', 'ASC')->get();
@@ -20,6 +31,7 @@ class SiteController extends Controller
         $addrs = Addr::all();
 
         return view('home', [
+            'seo' => $seo,
             'addrs' => $addrs,
             'categories' => $categories,
             'bossCategory' => $bossCategory,
@@ -78,6 +90,25 @@ class SiteController extends Controller
         ]);
     }
 
+    public function profile()
+    {
+        //LISTAGEM DE CATEGORIAS
+        $categories = Category::all();
+        $subCategories = Category::where('parent', '!=', null)->get();
+
+        //LISTAGEM DE ENDEREÇO DE ATENDIMENTO
+        $addrs = Addr::all();
+
+
+        $profile = Profile::where('id', 1)->first();
+        return view('profile', [
+            'categories' => $categories,
+            'subCategories' => $subCategories,
+            'addrs' => $addrs,
+            'profile' => $profile
+        ]);
+    }
+
 
     public function nav($slug)
     {
@@ -103,7 +134,6 @@ class SiteController extends Controller
             echo "a categoria " . $slug . " não existe";
         }
     }
-
 
 
     public function testes()

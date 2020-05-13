@@ -32,7 +32,7 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     }
 
     .logo_dark img {
-        width: 200px;
+        width: 160px;
     }
 }
 
@@ -193,16 +193,21 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
         display: block;
         position: fixed;
         top: 20px;
-        left: 39%;
+        left: 45%;
     }
 
     .logo_for_mobile img {
         width: 150px;
     }
+
 }
 
 /*860*/
 @media (max-width: 55em) {
+    .logo_for_mobile {
+        left: 41%;
+    }
+
     .go_out_in_860 {
         display: none;
     }
@@ -214,6 +219,9 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 
 /*450*/
 @media (max-width: 28.125em) {
+    .logo_for_mobile {
+        left: 30%;
+    }
     .go_in_860 {
         display: none;
     }
@@ -287,19 +295,378 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 /*############################################################################################################*/
 /*############################################################################################################*/
 /*############################################################################################################*/
-/** ABOUT - DRA ANA */
+/** PROFILE - DRA ANA */
 /*############################################################################################################*/
-/*X*/
-@media (max-width: 0em) {
+/*1800*/
+@media (max-width: 112.5em) {
+    .about_content {
+        background-size: 350px;
+    }
+
+    .left_div {
+        width: 75%;
+        left: -177px;
+    }
+}
+
+/*1500*/
+@media (max-width: 93.75em) {
+    .about_content {
+        background-size: 250px;
+    }
+
+    .left_div {
+        width: 75%;
+        left: -177px;
+    }
+
+    .dra_img {
+        width: 400px;
+    }
+}
+
+/*1366*/
+@media (max-width: 86em) {
+    .about_content {
+        margin: 100px 0;
+        background-size: 210px;
+    }
+
+    .content971 header > h1 {
+        font-size: 3.7em;
+    }
+
+    .left_div {
+        width: 80%;
+        left: -177px;
+    }
+
+    .left_div_content {
+        margin: 0;
+    }
+
+    .dra_img {
+        width: 450px;
+    }
+}
+
+/*1180*/
+@media (max-width: 73.75em) {
+    .about_content {
+        margin: 10px 0;
+        background-size: 0;
+    }
+
+    .about_pics {
+        justify-content: space-around;
+    }
+
+    .about_pics .item {
+        flex-basis: calc(50% - 5px);
+    }
+
+    .content971 header > h1 {
+        font-size: 3.7em;
+    }
+
+    .left_div {
+        width: 80%;
+        left: -177px;
+    }
+
+    .left_div_content {
+        margin: 0;
+    }
+
+    .left_div_footer {
+        align-items: center;
+    }
+
+    .left_div_footer p {
+        margin-left: 10px;
+    }
+
+    .dra_img {
+        width: 100%;
+    }
+
+    .just-in-mobile {
+        display: block;
+    }
+
+    .just-in-desktop {
+        display: none;
+    }
+
+    .new_about {
+        background: var(--colorLightSand);
+        padding-left: 30px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        text-align: left;
+        color: var(--colorWine);
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: var(--fontWeightBold);
+        line-height: 1.7em;
+        letter-spacing: 0.2em;
+    }
+
+    .new_about p {
+        margin-right: 30px;
+    }
+
+    .new_about_img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content971 {
+        padding: 30px;
+        float: inherit;
+    }
+}
+
+/*770*/
+@media (max-width: 48.125em) {
+    .about_content {
+        margin: 10px 0;
+    }
+
+    .content971 header > h1 {
+        font-size: 3em;
+    }
+
+    .content971 header > div > p {
+        font-size: 1.2em;
+    }
+
+    .content971 header > p {
+        font-size: 1.2em;
+    }
+
+    .content971 > p {
+        font-size: 1.1em;
+    }
+}
+
+/*575*/
+@media (max-width: 36em) {
+    .about_content {
+        margin: 30px 0;
+    }
+}
+
+/*512*/
+@media (max-width: 32em) {
+    .content971 header > h1 {
+        font-size: 2.5em;
+    }
 
 }
 
-/*############################################################################################################*/
-/*############################################################################################################*/
-/*############################################################################################################*/
-/** POSTS */
-/*############################################################################################################*/
-/*x*/
-@media (max-width: 0em) {
+/*428*/
+@media (max-width: 26.75em) {
+    .about_header img {
+        height: 130px;
+    }
 
+    .content971 header > h1 {
+        font-size: 2em;
+    }
+
+}
+
+
+/*############################################################################################################*/
+/*############################################################################################################*/
+/*############################################################################################################*/
+/** POSTS*/
+/*############################################################################################################*/
+
+/*1550*/
+@media (max-width: 96.875em) {
+    .posts_header {
+        height: 150px;
+    }
+
+    .posts_header img {
+        width: 150px;
+    }
+
+    .posts_content {
+        width: 800px;
+    }
+}
+
+/*1366*/
+@media (max-width: 85.375em) {
+    .posts_content {
+        width: 730px;
+    }
+
+    .posts_content h1 {
+        font-size: 3.7em;
+    }
+
+    .posts_content h2 {
+        font-size: 1.2em;
+    }
+
+    .posts_content p {
+        font-size: 1em;
+    }
+
+    .box_img_r p,
+    .box_img_l p {
+        font-size: 0.7em;
+    }
+
+    .box_text p {
+        font-size: 1.2em;
+    }
+
+    .box_generic h1 {
+        font-size: 1.2em;
+    }
+}
+
+/*1200*/
+@media (max-width: 75em) {
+    .posts_content {
+        width: 600px;
+    }
+
+    .box_img_r,
+    .box_img_l {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .box_img_r span,
+    .box_img_l span {
+        margin-top: 20px;
+    }
+
+    .box_img_r p,
+    .box_img_l p {
+        padding-top: 10px;
+    }
+}
+
+/*1178*/
+@media (max-width: 73.625em) {
+    .menu {
+        right: 30px;
+    }
+
+    .margin60-0 {
+        margin: 30px 0;
+    }
+
+    .posts_and_aside_container {
+        flex-wrap: wrap;
+    }
+
+    .posts_aside_container {
+        flex-basis: 100%;
+    }
+
+    .posts_aside_content {
+        padding: 0 100px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .btn-mobile-go-out-1178 {
+        display: none;
+    }
+
+    .btn-mobile-show-1178 {
+        display: block;
+    }
+
+    .posts_container {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .posts_content {
+        width: 100%;
+        padding: 0 100px;
+    }
+
+    .posts_content .tagline p {
+        text-align: left;
+    }
+
+    .posts_content h1 {
+        margin: 60px auto 0 auto;
+    }
+
+    .box_generic h1 {
+        margin: 20px auto 20px auto;
+    }
+
+    .services-post-go-out-1178 {
+        display: none;
+    }
+
+    .box_text {
+        padding: 50px;
+    }
+}
+
+/*600*/
+@media (max-width: 37.5em) {
+    .posts_aside_content {
+        padding: 0 30px;
+    }
+
+    .posts_content {
+        padding: 0 30px;
+    }
+
+    .posts_aside_content h1 {
+        margin: 20px 0;
+    }
+
+    .posts_aside_content h1 {
+        font-size: 1em;
+    }
+
+    .posts_aside_content nav ul li {
+        padding: 20px 0;
+    }
+
+    .posts_aside_content nav ul li a {
+        font-size: 0.8em;
+    }
+}
+
+/*450*/
+@media (max-width: 28.125em) {
+    .posts_header img {
+        width: 120px;
+    }
+
+    .posts_content h1 {
+        font-size: 2.5em;
+    }
+
+    .posts_content h2 {
+        font-size: 1em;
+    }
+
+    .box_text p {
+        font-size: 0.9em;
+    }
+
+    .box_text {
+        padding: 30px;
+    }
+
+    .box_generic h1 {
+        font-size: 1em;
+    }
 }
