@@ -15,4 +15,5 @@
         @include('includes.contact')
         @include('includes.services')
     </div>
+    @include('includes.upnow')
 @endsection

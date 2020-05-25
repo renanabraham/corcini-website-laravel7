@@ -10,4 +10,5 @@
     @include('includes.about')
     @include('includes.services')
     @include('includes.footer')
+    @include('includes.upnow')
 @endsection

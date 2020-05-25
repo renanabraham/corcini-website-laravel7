@@ -3,12 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 192px;
+    height: 150px;
     background: #d3bc8d;
 }
 
 .about_header img {
-    height: 162px;
+    height: 100px;
 }
 
 .about_pics {
@@ -89,31 +89,28 @@
 
 
 .left_div {
-    width: 60%;
+    width: 40%;
     background: #fef9ee;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 400px;
     z-index: 3;
 }
 
 .dra_img {
-    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 60px;
 }
 
 .left_div_content {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-/ / background: red;
-    width: 50%;
-    padding-top: 80px;
-    padding-bottom: 80px;
-/ / padding-right: 50 px;
-    margin-left: 35px;
+    width: 80%;
+    padding: 80px;
     text-align: left;
     color: var(--colorWine);
     font-size: 14px;
@@ -144,30 +141,6 @@
     size: 20px;
 }
 
-.about_social_links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 170px;
-    background: #fef9ee;
+.margin_bottom220px {
+    margin-bottom: 0px !important;
 }
-
-.about_social_links h1 {
-    flex-basis: 100%;
-    text-align: center;
-    color: var(--colorSand);
-    font-weight: var(--fontWeightSemiBold);
-    font-size: 20px;
-    text-transform: uppercase;
-}
-
-.about_social_links ul {
-    display: flex;
-}
-
-.about_social_links img {
-    border: 1px solid #e3dfd5;
-    padding: 10px;
-}
-

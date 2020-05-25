@@ -85,6 +85,9 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
         margin: 20px 0;
         padding-left: 107px;
     }
+    .marginTop60px{
+        margin-top: 40px!important;
+    }
 }
 
 /*860*/
@@ -188,16 +191,40 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     .go_out_in_1170 {
         display: none !important;
     }
-
+    .j-menu_home{
+        cursor: pointer;
+    }
     .logo_for_mobile {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: fixed;
-        top: 20px;
-        left: 45%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        background: var(--colorSand);
+        padding: 16px 30px;
+        z-index: 2;
+        border-bottom: 1px solid #ffffff;
     }
 
-    .logo_for_mobile img {
-        width: 150px;
+    .logo_home_mobile img {
+        width: 80px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu_mobile {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        z-index: 2;
+        top: 20px;
+        right: 20px;
+        background: var(--colorSand);
+        padding: 10px;
     }
 
 }
@@ -205,7 +232,7 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 /*860*/
 @media (max-width: 55em) {
     .logo_for_mobile {
-        left: 41%;
+        //left: 41%;
     }
 
     .go_out_in_860 {
@@ -215,13 +242,40 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     .go_in_860 {
         display: block;
     }
+
+    .close_menu span {
+        display: none;
+    }
+
+    .social_media_header {
+        display: block;
+    }
+
+    .nav li {
+        flex-basis: 80%;
+    }
+    .nav_menu_item img{
+        display: none;
+    }
+}
+
+/*600*/
+@media (max-width: 37.5em) {
+    .nav_menu_item img {
+        display: none;
+    }
+
+    .nav a {
+        text-align: left;
+    }
 }
 
 /*450*/
 @media (max-width: 28.125em) {
     .logo_for_mobile {
-        left: 30%;
+        //left: 30%;
     }
+
     .go_in_860 {
         display: none;
     }
@@ -280,6 +334,13 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 
 }
 
+/*450*/
+@media (max-width: 28.125em ) {
+    .slides_container .title {
+        font-size: 2em;
+    }
+}
+
 /*############################################################################################################*/
 /*############################################################################################################*/
 /*############################################################################################################*/
@@ -304,8 +365,7 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     }
 
     .left_div {
-        width: 75%;
-        left: -177px;
+        left: 270px;
     }
 }
 
@@ -316,12 +376,14 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     }
 
     .left_div {
-        width: 75%;
-        left: -177px;
+        width: 40%;
+        top: 0;
+        left: 150px;
     }
 
-    .dra_img {
-        width: 400px;
+    .left_div_content {
+        width: 80%;
+        padding: 80px;
     }
 }
 
@@ -337,17 +399,14 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     }
 
     .left_div {
-        width: 80%;
-        left: -177px;
+        left: 120px;
     }
 
     .left_div_content {
-        margin: 0;
+        width: 80%;
+        padding: 50px;
     }
 
-    .dra_img {
-        width: 450px;
-    }
 }
 
 /*1180*/
@@ -370,8 +429,7 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     }
 
     .left_div {
-        width: 80%;
-        left: -177px;
+        display: none;
     }
 
     .left_div_content {
@@ -388,6 +446,7 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 
     .dra_img {
         width: 100%;
+        margin: 0;
     }
 
     .just-in-mobile {
@@ -468,7 +527,7 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 /*428*/
 @media (max-width: 26.75em) {
     .about_header img {
-        height: 130px;
+        height: 100px;
     }
 
     .content971 header > h1 {
@@ -487,15 +546,18 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 /*1550*/
 @media (max-width: 96.875em) {
     .posts_header {
-        height: 150px;
+        height: 110px;
     }
 
     .posts_header img {
-        width: 150px;
+        width: 110px;
     }
 
     .posts_content {
         width: 800px;
+    }
+    .posts_and_aside_container{
+        margin-top: 112px;
     }
 }
 
@@ -540,7 +602,6 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     .box_img_r,
     .box_img_l {
         flex-wrap: wrap;
-        text-align: center;
     }
 
     .box_img_r span,
@@ -588,7 +649,6 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 
     .posts_container {
         flex-basis: 100%;
-        text-align: center;
     }
 
     .posts_content {
@@ -628,10 +688,6 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
     }
 
     .posts_aside_content h1 {
-        margin: 20px 0;
-    }
-
-    .posts_aside_content h1 {
         font-size: 1em;
     }
 
@@ -668,5 +724,69 @@ LISTA DE CLASSES QUE ESTÃO NO BOOT.CSS E COMEÇAM A APARECER COM 860PX:
 
     .box_generic h1 {
         font-size: 1em;
+    }
+}
+
+/*############################################################################################################*/
+/*############################################################################################################*/
+/*############################################################################################################*/
+/** MOBILE MODULE*/
+/*############################################################################################################*/
+/*880px*/
+@media (max-width: 55em) {
+    .btn_whatsapp_desktop {
+        display: none;
+    }
+
+    .btn_whatsapp_mobile {
+        display: block;
+    }
+}
+
+/*############################################################################################################*/
+/*############################################################################################################*/
+/*############################################################################################################*/
+/** SECTION CTA HOME // know_more.blade.php */
+/*############################################################################################################*/
+/*1178*/
+@media (max-width: 73.625em) {
+    .cta_home h1{
+        margin: 30px 0;
+    }
+    .logo_no_text{
+        left: 70px;
+    }
+}
+
+/*928*/
+@media (max-width: 58em) {
+    .go_out_in_928{
+        display: none;
+    }
+    .go_in_929{
+        display: block;
+    }
+}
+
+/*855*/
+@media (max-width: 58em) {
+    .cta_home_img{
+        display: none;
+    }
+    .cta_home {
+        padding: 100px 100px;
+    }
+    .go_in_929{
+        display: none;
+    }
+    .go_in_855{
+        display: block;
+    }
+}
+
+/*590*/
+@media (max-width: 36.875em) {
+    .cta_home {
+        padding: 100px 30px;
     }
 }

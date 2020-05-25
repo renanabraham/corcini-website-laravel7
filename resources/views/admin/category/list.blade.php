@@ -17,7 +17,7 @@
         <tr>
             <th scope="col">ID#</th>
             <th scope="col">Título da categoria</th>
-            <th scope="col">Descrição</th>
+            <th scope="col">Nome para menu do site</th>
             <th scope="col">Editar</th>
             <th scope="col">Excluir</th>
         </tr>
@@ -28,7 +28,7 @@
                 <tr>
                     <th scope="row">{{$category->id}}</th>
                     <td><b>{{$category->title}}</b></td>
-                    <td>{{$category->subtitle}}</td>
+                    <td>{{$category->menu_name}}</td>
                     <td><a href="/admin/category/edit/{{$category->id}}">Editar</a></td>
                     <td><a class="text-danger" href="/admin/category/delete/{{$category->id}}"
                            onclick="return confirm('Tem certeza?')">Excluir</a>
@@ -38,8 +38,8 @@
                     @if($sub->parent == $category->id)
                         <tr>
                             <th scope="row">{{$sub->id}}</th>
-                            <td>- {{$sub->title}}</td>
-                            <td>- {{$sub->subtitle}}</td>
+                            <td>+ {{$sub->title}}</td>
+                            <td>{{$sub->menu_name}}</td>
                             <td><a href="/admin/category/edit/{{$sub->id}}">Editar</a></td>
                             <td><a class="text-danger" href="/admin/category/delete/{{$sub->id}}"
                                    onclick="return confirm('Tem certeza?')">Excluir</a>

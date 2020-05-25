@@ -14,17 +14,17 @@
             @foreach($addrs as $addr)
                 <article class="addr_item">
                     <header>
-                        <img src="{{url("storage/".$addr->photo)}}" alt="">
+                        <img src="{{url("storage/app/public/".$addr->photo)}}" alt="">
                         <h1>{{$addr->city}}</h1>
                         <div class="underline"></div>
                         <p>{{$addr->addr}}</p>
                     </header>
                     <div class="tel ds-flex a-i-center">
-                        <img class="mr-18" src="images/desktop/icon_whatsapp.png" alt="">
+                        <img class="mr-18" src="images/desktop/icon_whatsapp.png" alt="" width="35">
                         <span class="">{{$addr->whatsapp}}</span>
                     </div>
                     <div class="tel ds-flex a-i-center">
-                        <img class="mr-18" src="images/desktop/icon_phone.png" alt="">
+                        <img class="mr-18" src="images/desktop/icon_phone.png" alt="" width="35">
                         <span class="">{{$addr->phone}}</span>
                     </div>
                 </article>

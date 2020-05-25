@@ -31,11 +31,34 @@ $(function () {
 
 
     //################## MENU
+    var size = $(window).width();
+    //EFEITO PARA TODAS EXETO HOME
     $('.menu').click(function () {
+        $('.posts_header').fadeOut();
+        $('.posts_and_aside_container').css('margin-top','0px');
+        $('.nav').fadeIn(1000);
+    });
+    //EFEITO SOMENTE PARA HOME
+    $('.j-menu_home').click(function () {
+        $('.posts_header').fadeOut();
+        $('.posts_and_aside_container').css('margin-top','0px');
         $('.nav').fadeIn(1000);
     });
     $('.close_menu').click(function () {
         $('.nav').fadeOut(500);
+        $('.posts_header').fadeIn();
+        if (size > 1550) {
+            $('.posts_and_aside_container').css('margin-top','186px');
+        }
+        if (size <= 1550) {
+            $('.posts_and_aside_container').css('margin-top','112px');
+        }
+    });
+    //################## MENU MOBILE
+    $('.menu_mobile').click(function () {
+        $('.posts_header').fadeOut();
+        $('.posts_and_aside_container').css('margin-top','0px');
+        $('.nav').fadeIn(1000);
     });
 
     //################## PAGE EFFECTS
@@ -45,7 +68,7 @@ $(function () {
 
     // HOME PAGE OK
     if (home) {
-        $('.go_out_in_1170').removeClass('ds-none');
+        $('.go_out_in_1170').removeClass('ds-non');
 
         $(window).scroll(function () {
 
@@ -88,9 +111,9 @@ $(function () {
             }
 
             //LOGO MOBILE
-            if ($(this).scrollTop() > $('.logo_for_mobile').outerHeight() * 1) {
-                $('.logo_for_mobile ').fadeOut();
-            }
+            // if ($(this).scrollTop() > $('.logo_for_mobile').outerHeight() * 1) {
+            //     $('.logo_for_mobile ').fadeOut();
+            // }
             // if ($(this).scrollTop() < $('.logo_for_mobile').outerHeight() * 1) {
             //     $('.logo_for_mobile ').fadeIn();
             // }
@@ -137,22 +160,7 @@ $(function () {
     //SERVICES PAGE OK
     if (services) {
         $(window).scroll(function () {
-            //TROCAR COR DO MENU E DA IMAGEM DO MENU
-            if ($(this).scrollTop() > $('.posts_header').outerHeight() * 1) {
-                $('.j-chance-color').css('color', 'd3bc8d');
-            }
-            if ($(this).scrollTop() < $('.posts_header').outerHeight() * 1) {
-                $('.j-chance-color').css('color', 'white');
-            }
-            if ($(this).scrollTop() > $('.posts_header').outerHeight() + $('.posts_and_aside_container').outerHeight()) {
-                $('.j-img-menu').fadeOut(function () {
-                    $('.j-img-sand').fadeIn();
-                });
-            } else {
-                $('.j-img-sand').fadeOut(function () {
-                    $('.j-img-menu').fadeIn();
-                });
-            }
+
             //linha do social da services
             if ($(this).scrollTop() > $('.posts_header').outerHeight() + $('.posts_container').outerHeight()) {
                 $('.line_wine').fadeOut(function () {
@@ -167,14 +175,23 @@ $(function () {
             }
         });
     }
-    //SERVICES PAGE OK
 
+    //############## GOTO CORE DA HOME
+    $('.wc_goto_home').click(function () {
+        var Goto = $($(this).attr("href"));
+        if (Goto.length) {
+            $('html, body').animate({scrollTop: Goto.offset().top}, 1000);
+        } else {
+            $('html, body').animate({scrollTop: 0}, 800);
+        }
+        return false;
+    });
 
     //############## GOTO CORE
     $('.wc_goto').click(function () {
         var Goto = $($(this).attr("href"));
         if (Goto.length) {
-            $('html, body').animate({scrollTop: Goto.offset().top}, 1000);
+            $('html, body').animate({scrollTop: Goto.offset().top - 200}, 1000);
         } else {
             $('html, body').animate({scrollTop: 0}, 800);
         }

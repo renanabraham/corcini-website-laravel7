@@ -13,4 +13,5 @@
     @include('includes.footer')
     @include('includes.know_more')
     @include('includes.upnow')
+    @include('includes.btn_whatsapp')
 @endsection

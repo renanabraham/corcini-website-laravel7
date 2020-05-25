@@ -6,6 +6,7 @@ use App\Addr;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 use PHPUnit\Framework\StaticAnalysis\HappyPath\AssertNotInstanceOf\A;
 
 class AddrController extends Controller
@@ -36,7 +37,7 @@ class AddrController extends Controller
     {
         if (Auth::check() === true) {
             $rules = [
-                'photo' => 'filled',
+                'photo' => 'filled|image|max:20000',
                 'city' => 'required',
                 'addr' => 'required',
                 'whatsapp' => 'required',
@@ -49,6 +50,8 @@ class AddrController extends Controller
 
             if ($request->file('photo')) {
                 $addr->photo = $request->file('photo')->store('public/addr');
+                $image1 = Image::make(public_path('storage/' . $addr->image1))->fit(571,371);
+                $image1->save();
             } else {
                 $addr->photo = null;
             }
@@ -99,7 +102,7 @@ class AddrController extends Controller
     {
         if (Auth::check() === true) {
             $rules = [
-                'photo' => 'filled',
+                'photo' => 'filled|image|max:20000',
                 'city' => 'required',
                 'addr' => 'required',
                 'whatsapp' => 'required',
@@ -112,6 +115,8 @@ class AddrController extends Controller
             $addr = Addr::find($id);
             if ($request->file('photo')) {
                 $addr->photo = $request->file('photo')->store('public/addr');
+                $image1 = Image::make(public_path('storage/' . $addr->image1))->fit(571,371);
+                $image1->save();
             } else {
                 $addr->photo = $addr->photo;
             }

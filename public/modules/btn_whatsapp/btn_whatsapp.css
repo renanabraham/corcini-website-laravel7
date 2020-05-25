@@ -1,0 +1,12 @@
+.btn_whatsapp_content {
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    z-index: 2;
+}
+.btn_whatsapp_desktop{
+    width: 300px;
+}
+.btn_whatsapp_mobile{
+    width: 70px;
+}

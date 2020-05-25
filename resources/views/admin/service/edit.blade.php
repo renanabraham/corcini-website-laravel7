@@ -39,6 +39,11 @@
             </div>
 
             <div class="form-group">
+                <label><b>Nome para ser mostrado no MENU do site:</b></label>
+                <input class="form-control" name="menu_name" value="{{$service->menu_name}}">
+            </div>
+
+            <div class="form-group">
                 <label><b><i>"Head Line"</i> Texto de introdução:</b></label>
                 <textarea class="form-control" name="headline" rows="5">{{$service->headline}}</textarea>
             </div>

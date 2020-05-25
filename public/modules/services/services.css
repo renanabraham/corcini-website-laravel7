@@ -70,3 +70,10 @@
     font-weight: var(--fontWeightSemiBold);
     letter-spacing: 0.2em;
 }
+.services_submenu{
+    margin: 10px;
+    padding-left: 10px;
+}
+.services_submenu a:hover{
+    text-decoration: underline;
+}

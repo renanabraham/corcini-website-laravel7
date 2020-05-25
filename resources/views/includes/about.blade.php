@@ -1,5 +1,5 @@
 <div class="about_header">
-    <img src="{{asset('images/desktop/logo.png')}}" alt="">
+    <a href="{{url('/')}}"><img src="{{asset('images/desktop/logo.png')}}" alt=""></a>
 </div>
 
 <div class="about_pics">
@@ -40,26 +40,22 @@
     </div>
 </section>
 
-<section class="jjj content just-in-desktop" style="height: 100%;">
-    <div class="position-relative">
-        <div class="left_div">
-            <div class="left_div_content">
-                <div class="line"></div>
-                <p>{{$profile->p4}}</p>
-                <div class="left_div_footer">
-                    <img style="margin-top: 10px; margin-right: 10px;" src="{{asset('images/desktop/line.png')}}" alt="">
-                    <p>Dra. Ana Cecília Corcini<br><span style="color: #d3bc8d;">CRM 38929</span></p>
-                </div>
-            </div>
-        </div>
-        <div class="content ds-flex" style="justify-content: flex-end;">
-            <div class="position-absolute" style="top: 90px; z-index: 2">
-                <img class="dra_img" src="{{asset('images/desktop/about/ana_corcini.jpg')}}" alt="">
+<section class="position-relative just-in-desktop">
+    <div class="left_div">
+        <div class="left_div_content">
+            <div class="line"></div>
+            <p>{{$profile->p4}}</p>
+            <div class="left_div_footer">
+                <img style="margin-top: 10px; margin-right: 10px;" src="{{asset('images/desktop/line.png')}}"
+                     alt="">
+                <p>Dra. Ana Cecília Corcini<br><span style="color: #d3bc8d;">CRM 38929</span></p>
             </div>
         </div>
     </div>
+    <div class="content" style="justify-content: flex-end;">
+        <img class="dra_img" src="{{asset('images/desktop/about/ana_corcini.jpg')}}" alt="">
+    </div>
 </section>
-
 
 <section class="jjj just-in-mobile ds-none">
     <div class="new_about">
@@ -76,11 +72,3 @@
     </div>
 </section>
 
-<div class="about_social_links">
-
-    <h1>Compartilhar esse conteúdo</h1>
-    <ul>
-        <li><a href=""><img src="{{asset('images/icons/facebook.png')}}" alt="" width="50" height="50"></a></li>
-        <li><a href=""><img src="{{asset('images/icons/insta.png')}}" alt="" width="50" height="50"></a></li>
-    </ul>
-</div>

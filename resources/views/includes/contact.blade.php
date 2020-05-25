@@ -3,19 +3,19 @@
     $cat2 = "images/desktop/service/category2_banner.png";
     $cat3= "images/desktop/service/category3_banner.png";
 @endphp
-@if($category->id ===1)
+@if($category->id == 1 || $category->parent == 1)
     @php
-        $banner = $cat1
+        $banner = $cat1;
     @endphp
 @endif
-@if($category->id ===2)
+@if($category->id == 2 || $category->parent == 2)
     @php
-        $banner = $cat3
+        $banner = $cat2;
     @endphp
 @endif
-@if($category->id ===3)
+@if($category->id == 3 || $category->parent == 3)
     @php
-        $banner = $cat3
+        $banner = $cat3;
     @endphp
 @endif
 <div class="contact_container position-relative"
@@ -31,7 +31,8 @@
             </div>
 
             <div class="btn_content">
-                <a href="" class="btn_contact" style="background: #5c4e63 !important;">
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=5551981017323&text=Sua%20mensagem"
+                   class="btn_contact" style="background: #5c4e63 !important;">
                     <img src="{{asset('images/desktop/icon_whatsapp.png')}}" alt="">
                     <p>Enviar Whatsapp<br/><span style="color: #d3bc8d !important;">51 981017323</span></p>
                 </a>

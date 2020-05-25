@@ -11,6 +11,7 @@ use App\Category;
 
 class SiteController extends Controller
 {
+
     public function home()
     {
         //CLASSE SEO
@@ -27,6 +28,9 @@ class SiteController extends Controller
         $bossCategory = Category::where('parent', null)->orderBy('order', 'ASC')->get();
         $subCategories = Category::where('parent', '!=', null)->get();
 
+        //LISTAGEM DE TODOS OS SERVIÇOS
+        $services = Service::all();
+
         //LISTAGEM DE ENDEREÇO DE ATENDIMENTO
         $addrs = Addr::all();
 
@@ -35,7 +39,8 @@ class SiteController extends Controller
             'addrs' => $addrs,
             'categories' => $categories,
             'bossCategory' => $bossCategory,
-            'subCategories' => $subCategories
+            'subCategories' => $subCategories,
+            'services' => $services
         ]);
     }
 
@@ -72,12 +77,15 @@ class SiteController extends Controller
         //DEPENDENDCIAS
         $categories = Category::all();
         $subCategories = Category::where('parent', '!=', null)->get();
+        $services = Service::all();
+
+        $categoriesMenu = Category::where('parent', null)->get();
 
         $service = Service::where('slug', $slug)->first();
-        $categoriesMenu = Category::where('parent', null)->get();
+        $anotherServices = Service::all();
+
         $category = Category::where('id', $service->category_id)->first();
         $superCat = Category::where('id', $category->parent)->first();
-
 
         return view('service', [
             'categories' => $categories,
@@ -86,7 +94,9 @@ class SiteController extends Controller
             'service' => $service,
             'categoriesMenu' => $categoriesMenu,
             'category' => $category,
-            'superCat' => $superCat
+            'superCat' => $superCat,
+            'anotherServices' => $anotherServices,
+            'services' => $services
         ]);
     }
 
@@ -99,64 +109,39 @@ class SiteController extends Controller
         //LISTAGEM DE ENDEREÇO DE ATENDIMENTO
         $addrs = Addr::all();
 
+        $services = Service::all();
+
 
         $profile = Profile::where('id', 1)->first();
         return view('profile', [
             'categories' => $categories,
             'subCategories' => $subCategories,
             'addrs' => $addrs,
-            'profile' => $profile
+            'profile' => $profile,
+            'services' => $services
         ]);
     }
 
-
-    public function nav($slug)
+    public function contact()
     {
-        $category = Category::where('slug', $slug)->first();
-        $subCategories = Category::where('parent', '!=', null)->get();
+        //LISTAGEM DE CATEGORIAS
         $categories = Category::all();
+        $bossCategory = Category::where('parent', null)->orderBy('order', 'ASC')->get();
+        $subCategories = Category::where('parent', '!=', null)->get();
 
-        //RELACIONAMENTO
-        $services = $category->services()->take(1)->get();
+        //LISTAGEM DE TODOS OS SERVIÇOS
+        $services = Service::all();
 
-        //LISTA TODOS OS SERVIÇOS
-        $servicesAll = Service::all();
+        //LISTAGEM DE ENDEREÇO DE ATENDIMENTO
+        $addrs = Addr::all();
 
-        if ($category) {
-            return view('pages.category', [
-                'category' => $category,
-                'categories' => $categories,
-                'subCategories' => $subCategories,
-                'servicesAll' => $servicesAll,
-                'services' => $services
-            ]);
-        } else {
-            echo "a categoria " . $slug . " não existe";
-        }
+        return view('contact', [
+            'categories' => $categories,
+            'bossCategory' => $bossCategory,
+            'subCategories' => $subCategories,
+            'services' => $services,
+            'addrs' => $addrs
+        ]);
     }
 
-
-    public function testes()
-    {
-        $category = Category::all();
-        $posts = Service::all();
-
-
-        foreach ($category as $subCat) {
-            if ($subCat->parent != null) {
-                echo "<p><b>" . $subCat->title . "</b></p>";
-                $services = Category::find($subCat->id)->services;
-                foreach ($services as $service) {
-                    echo "<p>- " . $service->title . "</p>";
-                }
-            }
-        }
-        echo "<hr>";
-        $sub = Category::find(3)->subCategories;
-        foreach ($sub as $item) {
-            echo "<h1>- " . $item->title . "</h1>";
-            echo "<p>- " . $item->title . "</p>";
-        }
-
-    }
 }

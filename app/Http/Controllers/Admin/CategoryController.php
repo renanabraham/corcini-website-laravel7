@@ -8,6 +8,7 @@ use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class CategoryController extends Controller
 {
@@ -49,7 +50,10 @@ class CategoryController extends Controller
         if (Auth::check() === true) {
             $rules = [
                 'title' => 'required',
-                'subtitle' => 'required'
+                'subtitle' => 'required',
+                'menu_name' => 'required',
+                'image1' => 'image|max:20000',
+                'image2' => 'image|max:20000'
             ];
 
             $request->validate($rules);
@@ -60,6 +64,47 @@ class CategoryController extends Controller
             $category->title = $request->title;
             $category->subtitle = $request->subtitle;
             $category->order = $request->order;
+
+            $category->menu_name = $request->menu_name;
+
+            $category->headline = $request->headline;
+            $category->p1 = $request->p1;
+            if ($request->file('image1')) {
+                $category->image1 = $request->file('image1')->store('public/category');
+                $image1 = Image::make(public_path('storage/' . $category->image1))->fit(571,371);
+                $image1->save();
+            } else {
+                $category->image1 = null;
+            }
+            $category->image1desc = $request->image1desc;
+            $category->p2 = $request->p2;
+            if ($request->file('image2')) {
+                $category->image2 = $request->file('image2')->store('public/category');
+                $image2 = Image::make(public_path('storage/' . $category->image2))->fit(571,371);
+                $image2->save();
+            } else {
+                $category->image2 = null;
+            }
+            $category->image2desc = $request->image2desc;
+            $category->p3 = $request->p3;
+            $category->video_url = $request->video_url;
+            $category->video_desc = $request->video_desc;
+            $category->step1_title = $request->step1_title;
+            $category->step1_content = $request->step1_content;
+            $category->step2_title = $request->step2_title;
+            $category->step2_content = $request->step2_content;
+            $category->step3_title = $request->step3_title;
+            $category->step3_content = $request->step3_content;
+            $category->step4_title = $request->step4_title;
+            $category->step4_content = $request->step4_content;
+            $category->step5_title = $request->step4_title;
+            $category->step5_content = $request->step4_content;
+            $category->step6_title = $request->step4_title;
+            $category->step6_content = $request->step4_content;
+            $category->step7_title = $request->step4_title;
+            $category->step7_content = $request->step4_content;
+
+
             $category->save();
 
             return redirect('/admin');
@@ -126,7 +171,10 @@ class CategoryController extends Controller
         if (Auth::check() === true) {
             $rules = [
                 'title' => 'required',
-                'subtitle' => 'required'
+                'subtitle' => 'required',
+                'menu_name' => 'required',
+                'image1' => 'image|max:20000',
+                'image2' => 'image|max:20000'
             ];
 
             $request->validate($rules);
@@ -134,12 +182,54 @@ class CategoryController extends Controller
             $category = Category::find($id);
 
             $categorySlug = $this->setSlug($request->title);
-
             $category->parent = $request->parent;
             $category->slug = $categorySlug;
             $category->title = $request->title;
             $category->subtitle = $request->subtitle;
             $category->order = $request->order;
+
+            $category->menu_name = $request->menu_name;
+
+            $category->headline = $request->headline;
+            $category->p1 = $request->p1;
+
+            if ($request->file('image1')) {
+                $category->image1 = $request->file('image1')->store('public/category');
+                $image1 = Image::make(public_path('storage/' . $category->image1))->fit(571,371);
+                $image1->save();
+
+            } else {
+                $category->image1 = $category->image1;
+            }
+            $category->image1desc = $request->image1desc;
+            $category->p2 = $request->p2;
+
+            if ($request->file('image2')) {
+                $category->image2 = $request->file('image2')->store('public/category');
+                $image2 = Image::make(public_path('storage/' . $category->image2))->fit(571,371);
+                $image2->save();
+            } else {
+                $category->image2 = $category->image2;
+            }
+
+            $category->image2desc = $request->image2desc;
+            $category->p3 = $request->p3;
+            $category->video_url = $request->video_url;
+            $category->video_desc = $request->video_desc;
+            $category->step1_title = $request->step1_title;
+            $category->step1_content = $request->step1_content;
+            $category->step2_title = $request->step2_title;
+            $category->step2_content = $request->step2_content;
+            $category->step3_title = $request->step3_title;
+            $category->step3_content = $request->step3_content;
+            $category->step4_title = $request->step4_title;
+            $category->step4_content = $request->step4_content;
+            $category->step5_title = $request->step4_title;
+            $category->step5_content = $request->step4_content;
+            $category->step6_title = $request->step4_title;
+            $category->step6_content = $request->step4_content;
+            $category->step7_title = $request->step4_title;
+            $category->step7_content = $request->step4_content;
             $category->save();
 
             return redirect('/admin');

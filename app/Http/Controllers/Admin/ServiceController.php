@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
 {
@@ -50,7 +51,9 @@ class ServiceController extends Controller
             $rules = [
                 'category_id' => 'filled',
                 'title' => 'required',
-                'subtitle' => 'required'
+                'subtitle' => 'required',
+                'image1' => 'image|max:20000',
+                'image2' => 'image|max:20000'
             ];
 
             $request->validate($rules);
@@ -61,10 +64,13 @@ class ServiceController extends Controller
             $service->slug = $slug;
             $service->title = $request->title;
             $service->subtitle = $request->subtitle;
+            $service->menu_name = $request->menu_name;
             $service->headline = $request->headline;
             $service->p1 = $request->p1;
             if ($request->file('image1')) {
                 $service->image1 = $request->file('image1')->store('public/service');
+                $image1 = Image::make(public_path('storage/' . $service->image1))->fit(571,371);
+                $image1->save();
             } else {
                 $service->image1 = null;
             }
@@ -72,6 +78,8 @@ class ServiceController extends Controller
             $service->p2 = $request->p2;
             if ($request->file('image2')) {
                 $service->image2 = $request->file('image2')->store('public/service');
+                $image2 = Image::make(public_path('storage/' . $service->image2))->fit(571,371);
+                $image2->save();
             } else {
                 $service->image2 = null;
             }
@@ -141,7 +149,9 @@ class ServiceController extends Controller
             $rules = [
                 'category_id' => 'filled',
                 'title' => 'required',
-                'subtitle' => 'required'
+                'subtitle' => 'required',
+                'image1' => 'image|max:20000',
+                'image2' => 'image|max:20000'
             ];
 
             $request->validate($rules);
@@ -151,12 +161,15 @@ class ServiceController extends Controller
             $service->category_id = $request->category_id;
             $service->slug = $slug;
             $service->title = $request->title;
+            $service->menu_name = $request->menu_name;
             $service->subtitle = $request->subtitle;
             $service->headline = $request->headline;
             $service->p1 = $request->p1;
 
             if ($request->file('image1')) {
                 $service->image1 = $request->file('image1')->store('public/service');
+                $image1 = Image::make(public_path('storage/' . $service->image1))->fit(571,371);
+                $image1->save();
             } else {
                 $service->image1 = $service->image1;
             }
@@ -165,6 +178,8 @@ class ServiceController extends Controller
 
             if ($request->file('image2')) {
                 $service->image2 = $request->file('image2')->store('public/service');
+                $image2 = Image::make(public_path('storage/' . $service->image2))->fit(571,371);
+                $image2->save();
             } else {
                 $service->image2 = $service->image2;
             }

@@ -44,6 +44,7 @@ class CreateServicesTable extends Migration
             $table->longText('step6_content')->nullable();
             $table->string('step7_title')->nullable();
             $table->longText('step7_content')->nullable();
+            $table->string('menu_name')->nullable();
             $table->timestamps();
         });
     }

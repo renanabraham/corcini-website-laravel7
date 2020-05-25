@@ -194,3 +194,10 @@ body {
 .marginTop60px {
     margin-top: 60px;
 }
+
+.hidden{
+    opacity:0;
+}
+.visible{
+    opacity:1;
+}

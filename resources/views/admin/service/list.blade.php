@@ -14,7 +14,8 @@
         <thead class="thead-dark">
         <tr>
             <th scope="col">ID#</th>
-            <th scope="col">Serviço</th>
+            <th scope="col">Título do serviço</th>
+            <th scope="col">Nome para menu do site</th>
             <th scope="col">Editar</th>
             <th scope="col">Excluir</th>
         </tr>
@@ -25,6 +26,7 @@
             <tr>
                 <th scope="row">{{$service->id}}</th>
                 <td>{{$service->title}}</td>
+                <td>{!! ($service->menu_name ? $service->menu_name : "<small class='text-danger'>Está em branco!</small>")!!}</td>
                 <td><a href="admin/service/edit/{{$service->id}}">Editar</a></td>
                 <td><a class="text-danger" href="admin/service/delete/{{$service->id}}" onclick="return confirm('Tem certeza?')">Excluir</a></td>
             </tr>

@@ -12,15 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'SiteController@home');
-Route::get('/servicos/{slug}/{id}', 'SiteController@services');
+Route::get('/novo', 'SiteController@home');
+Route::get('/servicos/{slug}/{id}', 'SiteController@services')->name('catMaster');
 Route::get('/servico/{slug}', 'SiteController@service');
 Route::get('/sobre', 'SiteController@profile');
-//Route::get('/servicos/{slug}/', 'SiteController@nav');
-//Route::get('/servico/{slug}', 'SiteController@service');
-//Route::get('/testes', 'SiteController@testes');
-
+Route::get('/contato', 'SiteController@contact');
 
 //ADMIN
 Route::prefix('admin')->group(function () {
