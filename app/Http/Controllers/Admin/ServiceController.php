@@ -8,6 +8,7 @@ use App\Service;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
@@ -69,7 +70,7 @@ class ServiceController extends Controller
             $service->p1 = $request->p1;
             if ($request->file('image1')) {
                 $service->image1 = $request->file('image1')->store('public/service');
-                $image1 = Image::make(public_path('storage/' . $service->image1))->fit(571,371);
+                $image1 = Image::make(storage_path('/app/public/' . $service->image1))->fit(571,371);
                 $image1->save();
             } else {
                 $service->image1 = null;
@@ -78,7 +79,7 @@ class ServiceController extends Controller
             $service->p2 = $request->p2;
             if ($request->file('image2')) {
                 $service->image2 = $request->file('image2')->store('public/service');
-                $image2 = Image::make(public_path('storage/' . $service->image2))->fit(571,371);
+                $image2 = Image::make(storage_path('/app/public/' . $service->image2))->fit(571,371);
                 $image2->save();
             } else {
                 $service->image2 = null;
@@ -168,7 +169,7 @@ class ServiceController extends Controller
 
             if ($request->file('image1')) {
                 $service->image1 = $request->file('image1')->store('public/service');
-                $image1 = Image::make(public_path('storage/' . $service->image1))->fit(571,371);
+                $image1 = Image::make(storage_path('/app/public/' . $service->image1))->fit(571,371);
                 $image1->save();
             } else {
                 $service->image1 = $service->image1;
@@ -178,7 +179,7 @@ class ServiceController extends Controller
 
             if ($request->file('image2')) {
                 $service->image2 = $request->file('image2')->store('public/service');
-                $image2 = Image::make(public_path('storage/' . $service->image2))->fit(571,371);
+                $image2 = Image::make(storage_path('/app/public/' . $service->image2))->fit(571,371);
                 $image2->save();
             } else {
                 $service->image2 = $service->image2;
@@ -225,5 +226,35 @@ class ServiceController extends Controller
         }
 
         return redirect('/admin');
+    }
+
+    public function deleteImage1($id)
+    {
+        if (Auth::check() === true) {
+
+            $service = Service::find($id);
+
+            Storage::delete($service->image1);
+            $service->image1 = null;
+            $service->save();
+
+            return redirect('admin/service/edit/' . $service->id);
+
+        }
+    }
+
+    public function deleteImage2($id)
+    {
+        if (Auth::check() === true) {
+
+            $service = Service::find($id);
+
+            Storage::delete($service->image2);
+            $service->image2 = null;
+            $service->save();
+
+            return redirect('admin/service/edit/' . $service->id);
+
+        }
     }
 }

@@ -50,7 +50,15 @@
 
             <div class="bg-light p-4 form-group">
                 @if($service->image1)
-                    <img class="rounded" src="{{asset('storage/'.$service->image1)}}" alt="" style="width: 200px;">
+                    <img class="rounded" src="{{asset('storage/app/public/'.$service->image1)}}" alt=""
+                         style="width: 200px;">
+                    @if($service->image1 != null)
+                        <a class="btn btn-danger" href="/admin/service/delimage1/{{$service->id}}">Deletar Imagem 1</a>
+                    @endif
+                @else
+                    <div class="rounded"
+                         style="background: #d3bc8d; width: 200px; height: 90px; display: flex; justify-content: center; align-items: center;">
+                        <p>Nenhuma Imagem</p></div>
                 @endif
                 <h3>IMAGEM 1</h3><label>Imagem com posição justificada na esquerda</label>
                 <p class=" text-danger">
@@ -62,7 +70,8 @@
 
                 <div class="form-group">
                     <label>Descrição da imagem justificada na esquerda</label>
-                    <textarea class="form-control" type="text" name="image1desc" rows="5">{{$service->image1desc}}</textarea>
+                    <textarea class="form-control" type="text" name="image1desc"
+                              rows="5">{{$service->image1desc}}</textarea>
                 </div>
             </div>
 
@@ -78,9 +87,15 @@
 
             <div class="bg-light p-4 form-group">
                 @if($service->image2)
-                    <img class="rounded" src="{{asset('storage/'.$service->image2)}}" alt="" style="width: 200px;">
-                    @else
-                    <div class="rounded" style="background: #d3bc8d; width: 200px; height: 90px; display: flex; justify-content: center; align-items: center;"><p>Nenhuma Imagem</p></div>
+                    <img class="rounded" src="{{asset('storage/app/public/'.$service->image2)}}" alt=""
+                         style="width: 200px;">
+                    @if($service->image2 != null)
+                        <a class="btn btn-danger" href="/admin/service/delimage2/{{$service->id}}">Deletar Imagem 2</a>
+                    @endif
+                @else
+                    <div class="rounded"
+                         style="background: #d3bc8d; width: 200px; height: 90px; display: flex; justify-content: center; align-items: center;">
+                        <p>Nenhuma Imagem</p></div>
                 @endif
                 <h3>IMAGEM 2</h3>
                 <p class=" text-danger">
@@ -93,7 +108,8 @@
 
                 <div class="form-group">
                     <label>Descrição da imagem justificada na direita</label>
-                    <textarea class="form-control" type="text" name="image2desc" rows="5">{{ $service->image2desc }}</textarea>
+                    <textarea class="form-control" type="text" name="image2desc"
+                              rows="5">{{ $service->image2desc }}</textarea>
                 </div>
             </div>
 
@@ -103,14 +119,14 @@
                 <textarea class="form-control mce" type="text" name="p3" rows="25">{!! $service->p3 !!}</textarea>
             </div>
 
-{{--            <div class="form-group">--}}
-{{--                <label for=""><b>Texto 3</b></label>--}}
-{{--                <textarea class="form-control" type="text" name="p4">{!! $service->p4 !!}</textarea>--}}
-{{--                <p class="text-muted">--}}
-{{--                    Você pode colocar o texto dentro de: <code>&lt;p&gt; SEU TEXTO &lt;/p&gt;</code> para indicar um--}}
-{{--                    paragrafo completo.--}}
-{{--                </p>--}}
-{{--            </div>--}}
+            {{--            <div class="form-group">--}}
+            {{--                <label for=""><b>Texto 3</b></label>--}}
+            {{--                <textarea class="form-control" type="text" name="p4">{!! $service->p4 !!}</textarea>--}}
+            {{--                <p class="text-muted">--}}
+            {{--                    Você pode colocar o texto dentro de: <code>&lt;p&gt; SEU TEXTO &lt;/p&gt;</code> para indicar um--}}
+            {{--                    paragrafo completo.--}}
+            {{--                </p>--}}
+            {{--            </div>--}}
 
             <div class="form-group">
                 <label for=""><b>URL de video</b></label>

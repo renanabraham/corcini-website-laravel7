@@ -61,14 +61,22 @@
             <div class="bg-light p-4 form-group">
                 @if($category->image1)
                     <img class="rounded" src="{{asset('storage/app/public/'.$category->image1)}}" alt="" style="width: 200px;">
+                    @if($category->image1 != null)
+                        <a class="btn btn-danger" href="/admin/category/delimage1/{{$category->id}}">Deletar Imagem 1</a>
+                    @endif
+                @else
+                    <div class="rounded"
+                         style="background: #d3bc8d; width: 200px; height: 90px; display: flex; justify-content: center; align-items: center;">
+                        <p>Nenhuma Imagem</p></div>
                 @endif
                 <h3>IMAGEM 1</h3><label>Imagem com posição justificada na esquerda</label>
                 <p class=" text-danger">
-                    <b>Atenção: </b>Tamanho de 571 x 371 pxs para nãoo estragar o layout do site!
+                    <b>Atenção: </b>Tamanho máximo de 20megas
                 </p>
                 <div class="form-group">
                     <input class="form-control" type="file" name="image1">
                 </div>
+
 
                 <div class="form-group">
                     <label>Descrição da imagem justificada na esquerda</label>
@@ -90,6 +98,9 @@
             <div class="bg-light p-4 form-group">
                 @if($category->image2)
                     <img class="rounded" src="{{asset('storage/app/public/'.$category->image2)}}" alt="" style="width: 200px;">
+                    @if($category->image2 != null)
+                        <a class="btn btn-danger" href="/admin/category/delimage2/{{$category->id}}">Deletar Imagem 2</a>
+                    @endif
                 @else
                     <div class="rounded"
                          style="background: #d3bc8d; width: 200px; height: 90px; display: flex; justify-content: center; align-items: center;">
@@ -97,7 +108,7 @@
                 @endif
                 <h3>IMAGEM 2</h3>
                 <p class=" text-danger">
-                    <b>Atenção: </b>Tamanho de 571 x 371 pxs para não estragar o layout do site!
+                    <b>Atenção: </b>Tamanho máximo de 20megas
                 </p>
                 <div class="form-group">
                     <label>Imagem com posição justificada na direita</label>

@@ -50,7 +50,7 @@ class AddrController extends Controller
 
             if ($request->file('photo')) {
                 $addr->photo = $request->file('photo')->store('public/addr');
-                $image1 = Image::make(public_path('storage/' . $addr->image1))->fit(571,371);
+                $image1 = Image::make(storage_path('/app/public/' . $addr->photo))->fit(370,240);
                 $image1->save();
             } else {
                 $addr->photo = null;
@@ -115,7 +115,7 @@ class AddrController extends Controller
             $addr = Addr::find($id);
             if ($request->file('photo')) {
                 $addr->photo = $request->file('photo')->store('public/addr');
-                $image1 = Image::make(public_path('storage/' . $addr->image1))->fit(571,371);
+                $image1 = Image::make(storage_path('/app/public/' . $addr->photo))->fit(370,240);
                 $image1->save();
             } else {
                 $addr->photo = $addr->photo;

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
@@ -71,7 +72,7 @@ class CategoryController extends Controller
             $category->p1 = $request->p1;
             if ($request->file('image1')) {
                 $category->image1 = $request->file('image1')->store('public/category');
-                $image1 = Image::make(public_path('storage/' . $category->image1))->fit(571,371);
+                $image1 = Image::make(storage_path('/app/public/' . $category->image1))->fit(571, 371);
                 $image1->save();
             } else {
                 $category->image1 = null;
@@ -80,7 +81,7 @@ class CategoryController extends Controller
             $category->p2 = $request->p2;
             if ($request->file('image2')) {
                 $category->image2 = $request->file('image2')->store('public/category');
-                $image2 = Image::make(public_path('storage/' . $category->image2))->fit(571,371);
+                $image2 = Image::make(storage_path('/app/public/' . $category->image2))->fit(571, 371);
                 $image2->save();
             } else {
                 $category->image2 = null;
@@ -195,18 +196,19 @@ class CategoryController extends Controller
 
             if ($request->file('image1')) {
                 $category->image1 = $request->file('image1')->store('public/category');
-                $image1 = Image::make(public_path('storage/' . $category->image1))->fit(571,371);
+                $image1 = Image::make(storage_path('/app/public/' . $category->image1))->fit(571, 371);
                 $image1->save();
 
             } else {
                 $category->image1 = $category->image1;
             }
+
             $category->image1desc = $request->image1desc;
             $category->p2 = $request->p2;
 
             if ($request->file('image2')) {
                 $category->image2 = $request->file('image2')->store('public/category');
-                $image2 = Image::make(public_path('storage/' . $category->image2))->fit(571,371);
+                $image2 = Image::make(storage_path('/app/public/' . $category->image2))->fit(571, 371);
                 $image2->save();
             } else {
                 $category->image2 = $category->image2;
@@ -262,5 +264,35 @@ class CategoryController extends Controller
 
         return view('auth.login');
 
+    }
+
+    public function deleteImage1($id)
+    {
+        if (Auth::check() === true) {
+
+            $category = Category::find($id);
+
+            Storage::delete($category->image1);
+            $category->image1 = null;
+            $category->save();
+
+            return redirect('admin/category/edit/' . $category->id);
+
+        }
+    }
+
+    public function deleteImage2($id)
+    {
+        if (Auth::check() === true) {
+
+            $category = Category::find($id);
+
+            Storage::delete($category->image2);
+            $category->image2 = null;
+            $category->save();
+
+            return redirect('admin/category/edit/' . $category->id);
+
+        }
     }
 }

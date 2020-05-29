@@ -22,7 +22,7 @@
         <tbody>
         @foreach($addrs as $addr)
             <tr>
-                <th scope="row"><img src="{{asset('storage/'.$addr->photo)}}" alt="" width="60" height="60"></th>
+                <th scope="row"><img src="{{asset('storage/app/public/'.$addr->photo)}}" alt="" width="60" height="60"></th>
                 <td>Clínica Corcini em <b>{{$addr->city}}</b></td>
                 <td><a href="/admin/addr/edit/{{$addr->id}}">Editar</a></td>
                 <td><a class="text-danger" href="/admin/addr/delete/{{$addr->id}}" onclick="return confirm('Tem certeza?')">Excluir</a>
